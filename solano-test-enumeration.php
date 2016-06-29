@@ -38,6 +38,7 @@ if ($return || !file_exists($test_list_file)) {
     $commands[] = array(
       'type'           => 'phpunit',
       'mode'           => 'parallel',
+      'output'         => 'exit-status',
       'command'        => './vendor/bin/solano-phpunit --bootstrap tests/bootstrap.php',
       'config'         => 'phpunit.xml',
       'files'          => $test_files,
