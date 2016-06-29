@@ -14,6 +14,8 @@ hooks:
 # Build profiles (http://docs.solanolabs.com/Beta/build-profiles/)
 profiles:
   default:      # All tests
+    environment:
+      'NOT_APPLICABLE': 'N/A' # Just set to ensure the 'default' profile is parsed properly.
   group_0:      # Only @group = group0 annotated classes/tests will be enumerated and run
     enviroment:
       'INCLUDE_GROUPS': 'group0'
