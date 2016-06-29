@@ -47,4 +47,6 @@ if ($return || !file_exists($test_list_file)) {
 }
 
 // Write results to enumeration pick-up file
-file_put_contents('test_list.json', array('commands' => json_encode($commands)));
+$json = array();
+$json['commands'] = $commands;
+file_put_contents('test_list.json', json_encode($json));
