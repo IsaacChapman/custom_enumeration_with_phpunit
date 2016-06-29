@@ -3,15 +3,6 @@ php:
 
 # Tests will be determined by `enumeration` hook script
 # http://docs.solanolabs.com/Beta/custom-enumeration/
-# The listed test will be replaced by the one determined from the 'enumeration' setup hook, but is here for reference
-tests:
-  - type: phpunit
-    mode: parallel
-    output: exit-status
-    command: vendor/bin/solano-phpunit -b tests/bootstrap.php
-    files:
-      - tests/*Test.php     # Include test files in 'tests' directory
-      - tests/**/*Test.php  # Include test files in subdirectories of 'tests'
 
 # Setup hooks (http://docs.solanolabs.com/Setup/setup-hooks/)
 hooks:
