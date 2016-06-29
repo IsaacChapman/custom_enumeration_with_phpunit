@@ -17,11 +17,11 @@ profiles:
     environment:
       'NOT_APPLICABLE': 'N/A' # Just set to ensure the 'default' profile is parsed properly.
   group_0:      # Only @group = group0 annotated classes/tests will be enumerated and run
-    enviroment:
+    environment:
       'INCLUDE_GROUPS': 'group0'
   group_A:      # Only @group = groupA annotated classes/tests will be enumerated and run
-    enviroment:
+    environment:
       'INCLUDE_GROUPS': 'groupA'
   group_0_A:      # Only @group = group0 and/or groupA annotated classes/tests will be enumerated and run
-    enviroment:
+    environment:
       'INCLUDE_GROUPS': 'group0,groupA'
