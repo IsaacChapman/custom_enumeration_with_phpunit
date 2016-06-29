@@ -19,18 +19,13 @@ if (!empty(getenv('INCLUDE_GROUPS'))) {
 }
 
 // Execute "dry run" command and determine files to really run
-echo("\n--- ENVIRONMENT VARIABLES:\n"):
-print_r($_ENV);
+echo("\n--- ENVIRONMENT VARIABLES:\n");
+echo(system('env | sort'));
 echo("\n");
 echo("\n--- ENUMRATION COMMAND: $phpunit_command \n");
 exec($phpunit_command, $output, $return);
 echo("\n--- ENUMRATION OUTPUT START ---\n" . implode("\n", $output) . "\n--- ENUMERATION OUTPUT END ---\n");
 if ($return || !file_exists($test_list_file)) {
-  echo ("\n###\n");
-  print_r($return);
-  echo ("\n###\n");
-  print_r(file_exists($test_list_file)? 'true' : 'false');
-  echo ("\n###\n");
   // The "dry run" command failed? Set the command to run to include `/bin/false` to ensure the build fails
   $commands[] = 'echo "Custom enumaration command failed!" && /bin/false';
 } else {
